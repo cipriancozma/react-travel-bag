@@ -1,8 +1,8 @@
 import React from "react";
-import { items } from "../data";
+// import { items } from "../data";
 import Item from "./Item";
 
-function ListOfItems() {
+function ListOfItems({ items }) {
   return (
     <div className="list">
       <ul>

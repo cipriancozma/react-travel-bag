@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 
-function Form() {
+function Form({ setItems }) {
   const [description, setDescription] = useState("");
   const [selectOptions, setSelectOptions] = useState(1);
+
+  function handleAddItems(item) {
+    setItems((currentState) => [...currentState, item]);
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -14,7 +18,7 @@ function Form() {
       packed: false,
       id: Date.now(),
     };
-    console.log(newItem);
+    handleAddItems(newItem);
     setDescription("");
     setSelectOptions(1);
   }

@@ -11,11 +11,23 @@ function App() {
     setItems((items) => items.filter((item) => item.id !== id));
   }
 
+  function handleChecked(id) {
+    setItems((items) =>
+      items.map((item) =>
+        item.id === id ? { ...item, packed: !item.packed } : item
+      )
+    );
+  }
+
   return (
     <div className="app">
       <Logo />
       <Form setItems={setItems} />
-      <ListOfItems items={items} handleDelete={handleDelete} />
+      <ListOfItems
+        items={items}
+        handleDelete={handleDelete}
+        handleChecked={handleChecked}
+      />
       <Stats />
     </div>
   );

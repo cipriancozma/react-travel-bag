@@ -3,11 +3,11 @@ import React, { useState } from "react";
 import Item from "./Item";
 
 function ListOfItems({ items, handleDelete, handleChecked, handleClearList }) {
-  const [sorted, setSorted] = useState("selectOptions");
+  const [sorted, setSorted] = useState("input");
 
   let sortedItems;
   if (sorted === "input") {
-    sortedItems = items;
+    sortedItems = items.toSorted();
   }
 
   if (sorted === "description") {
@@ -39,7 +39,9 @@ function ListOfItems({ items, handleDelete, handleChecked, handleClearList }) {
           <option value={"description"}>Sort by description</option>
           <option value={"packed"}>Sort by packed status</option>
         </select>
-        <button onClick={handleClearList}>Clear items</button>
+        <button onClick={() => handleClearList()} disabled={!items.length}>
+          Clear items
+        </button>
       </div>
     </div>
   );

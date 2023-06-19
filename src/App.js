@@ -20,7 +20,9 @@ function App() {
   }
 
   function handleClearList() {
-    setItems([]);
+    if (!items.length) return;
+    const confirmed = window.confirm("Are you sure?");
+    if (confirmed) setItems([]);
   }
 
   return (

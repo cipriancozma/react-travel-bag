@@ -1,3 +1,5 @@
+![image](https://github.com/cipriancozma/react-travel-bag/assets/38767799/68f3b74d-c785-4890-9b1a-8dbdd6bca662)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

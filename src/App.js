@@ -19,6 +19,10 @@ function App() {
     );
   }
 
+  function handleClearList() {
+    setItems([]);
+  }
+
   return (
     <div className="app">
       <Logo />
@@ -27,6 +31,7 @@ function App() {
         items={items}
         handleDelete={handleDelete}
         handleChecked={handleChecked}
+        handleClearList={handleClearList}
       />
       <Stats items={items} />
     </div>

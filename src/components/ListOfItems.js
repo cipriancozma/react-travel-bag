@@ -2,7 +2,7 @@ import React, { useState } from "react";
 // import { items } from "../data";
 import Item from "./Item";
 
-function ListOfItems({ items, handleDelete, handleChecked }) {
+function ListOfItems({ items, handleDelete, handleChecked, handleClearList }) {
   const [sorted, setSorted] = useState("selectOptions");
 
   let sortedItems;
@@ -39,6 +39,7 @@ function ListOfItems({ items, handleDelete, handleChecked }) {
           <option value={"description"}>Sort by description</option>
           <option value={"packed"}>Sort by packed status</option>
         </select>
+        <button onClick={handleClearList}>Clear items</button>
       </div>
     </div>
   );

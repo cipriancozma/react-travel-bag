@@ -28,7 +28,7 @@ function App() {
         handleDelete={handleDelete}
         handleChecked={handleChecked}
       />
-      <Stats />
+      <Stats items={items} />
     </div>
   );
 }
